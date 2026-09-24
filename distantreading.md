@@ -41,3 +41,5 @@ The Cirrus visualization shows “slave” as the most prominent word, followed 
 
 
 ## Reflection 
+
+Voyant was useful for showing patterns in the words used throughout the speech, while Copilot was able to interpret some of those patterns and identify larger themes and rhetorical strategies. Voyant cannot explain the meaning or context behind word frequencies and Copilot's interpretations were not always completely accurate. Both tools are useful for finding patterns and starting an analysis, but they still require examination of the original text and make your own judgments. This showed me that distant reading can make large amounts of text easier to analyze, but it works best alongside close reading.
