@@ -7,9 +7,19 @@ title: Distant Reading Project
 
 
 # Distant Reading Assignment 
+Voyant Analysis: Frederick Douglass
 
-*This is a page where you can paste your distant reading assignment. I strongly suggest writing it in Word or Google Docs first, because Github will not alert you of typos*
+I used Voyant Tools to analyze Frederick Douglass's speech, “What to the Slave Is the Fourth of July?” <https://www.neil.blog/full-speech-transcript/what-to-the-slave-is-the-fourth-of-july-by-frederick-douglass>
 
-This file ends in ".md," which means it is a Markdown document, rather than HTML. I find Markdown easier to use than HTML, but you can easily change this to an HTML document if you prefer: just replace the .md with .html and commit! 
+## Copilot Analysis
 
-Here is a fun link to a [Markdown Cheatsheet](https://www.markdownguide.org/cheat-sheet/). Once you grasp the basics here, go add "Markdown" to your list of skills on your resume!
+I asked Copilot to analyze the major themes in the speech and then asked it to analyze Douglass's rhetorical strategies, particularly his use of repetition, contrasts, rhetorical questions, and the pronouns “you” and “we.”
+
+**Copilot Response:**
+
+[Paste one of your Copilot responses here.]
+
+**Second Copilot Response:**
+
+[Paste the other response here, if you want to include both.]
+
