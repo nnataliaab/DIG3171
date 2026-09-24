@@ -7,9 +7,9 @@ title: Distant Reading Project
 
 
 # Distant Reading Assignment 
-Voyant Analysis: Frederick Douglass
+Analysis: Frederick Douglass
 
-I used Voyant Tools to analyze Frederick Douglass's speech, “What to the Slave Is the Fourth of July?” <https://www.neil.blog/full-speech-transcript/what-to-the-slave-is-the-fourth-of-july-by-frederick-douglass>
+For this project, I analyzed Frederick Douglass's speech using Voyant Tools and Microsoft Copilot. I used the same text for both tools to compare what each one could reveal about the speech. <https://www.neil.blog/full-speech-transcript/what-to-the-slave-is-the-fourth-of-july-by-frederick-douglass>
 
 ## Copilot Analysis
 
@@ -17,9 +17,27 @@ I asked Copilot to analyze the major themes in the speech and then asked it to a
 
 **Copilot Response:**
 
-[Paste one of your Copilot responses here.]
+Repetition: Building Moral Pressure and Emotional Momentum
+Douglass uses repetition to intensify his argument and to make certain ideas inescapable.
 
-**Second Copilot Response:**
+He repeats the idea that the holiday belongs to white Americans alone:
+“This Fourth of July is yours, not mine. You may rejoice, I must mourn.”  
+This repetition creates a rhythmic divide—every time he says “yours,” the audience is reminded of the exclusion.
 
-[Paste the other response here, if you want to include both.]
+He repeats the charge of national hypocrisy:
+“Your celebration is a sham… your boasted liberty… your shouts of liberty and equality…”  
+The repeated “your” becomes accusatory, hammering home the disconnect between ideals and reality.
 
+He repeats the moral clarity of slavery’s evil:
+“There is not a man beneath the canopy of heaven, that does not know that slavery is wrong for him.”  
+Repetition here removes any pretense of ambiguity; the point is so obvious it cannot be debated.
+
+Effect: Repetition creates a cumulative moral weight. Each recurrence tightens the argument until the audience cannot escape the conclusion: the nation’s celebration is fundamentally compromised.
+
+## Voyant Analysis 
+![Voyant Cirrus visualization of Frederick Douglass's speech](douglass-voyant.png.png)
+
+The Cirrus visualization shows “slave” as the most prominent word, followed by words such as “men,” “slavery,” “American,” “God,” “church,” “liberty,” “nation,” and “country.” These words reflect the speech's focus on slavery, freedom, religion, and American identity.
+
+
+## Reflection 
