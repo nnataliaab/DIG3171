@@ -13,22 +13,19 @@
 
     body {
       margin: 0;
-      min-height: 100vh;
       background: #f3eee6;
       color: #332d29;
       font-family: Georgia, "Times New Roman", serif;
-      display: flex;
-      flex-direction: column;
     }
 
     header {
       padding: 22px 7%;
+      border-bottom: 1px solid #d8cfc3;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid #d8cfc3;
-      font-family: Arial, sans-serif;
-      font-size: 0.85rem;
+      font: 12px Arial, sans-serif;
+      letter-spacing: 1px;
     }
 
     header a {
@@ -36,39 +33,31 @@
       text-decoration: none;
     }
 
-    header a:hover {
-      text-decoration: underline;
+    main {
+      width: min(850px, 88%);
+      margin: 65px auto;
     }
 
     .eyebrow {
+      font: 12px Arial, sans-serif;
+      letter-spacing: 3px;
       text-transform: uppercase;
-      letter-spacing: 0.16em;
-      font-size: 0.75rem;
       color: #865e4b;
-      font-family: Arial, sans-serif;
-    }
-
-    main {
-      width: min(850px, 90%);
-      margin: 65px auto;
-      flex: 1;
     }
 
     h1 {
-      font-size: clamp(2.5rem, 7vw, 5.5rem);
-      line-height: 0.98;
-      letter-spacing: -0.045em;
-      font-weight: normal;
-      margin: 18px 0 24px;
       max-width: 750px;
+      margin: 20px 0;
+      font-size: clamp(42px, 8vw, 82px);
+      font-weight: normal;
+      line-height: 0.98;
+      letter-spacing: -2px;
     }
 
     .intro {
-      font-family: Arial, sans-serif;
-      line-height: 1.8;
       max-width: 620px;
       color: #62574f;
-      font-size: 1rem;
+      font: 16px/1.8 Arial, sans-serif;
     }
 
     .generator {
@@ -79,18 +68,17 @@
     }
 
     .generator-label {
-      font-family: Arial, sans-serif;
+      font: 12px Arial, sans-serif;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-size: 0.72rem;
+      letter-spacing: 2px;
       color: #785442;
     }
 
     #text-container {
-      font-size: clamp(1.4rem, 3.5vw, 2.25rem);
-      line-height: 1.45;
-      min-height: 150px;
+      min-height: 145px;
       margin: 28px 0;
+      font-size: clamp(23px, 4vw, 36px);
+      line-height: 1.45;
       overflow-wrap: anywhere;
     }
 
@@ -101,12 +89,10 @@
     }
 
     button {
-      border: 1px solid #654737;
       padding: 13px 20px;
-      font-family: Arial, sans-serif;
-      font-size: 0.9rem;
+      border: 1px solid #654737;
+      font: 14px Arial, sans-serif;
       cursor: pointer;
-      transition: background 0.2s, color 0.2s;
     }
 
     .primary {
@@ -130,10 +116,8 @@
     footer {
       padding: 22px 7%;
       border-top: 1px solid #d8cfc3;
-      font-family: Arial, sans-serif;
-      font-size: 0.78rem;
-      line-height: 1.7;
       color: #75685e;
+      font: 12px/1.8 Arial, sans-serif;
     }
 
     .modal {
@@ -141,39 +125,35 @@
       position: fixed;
       inset: 0;
       z-index: 10;
-      background: rgba(35, 28, 24, 0.65);
-      padding: 20px;
       overflow-y: auto;
+      padding: 20px;
+      background: rgba(35, 28, 24, 0.65);
     }
 
     .modal-content {
-      background: #f9f5ee;
       width: min(650px, 100%);
       margin: 7vh auto;
       padding: clamp(24px, 5vw, 45px);
-      line-height: 1.8;
-      font-family: Arial, sans-serif;
+      background: #f9f5ee;
+      font: 16px/1.8 Arial, sans-serif;
     }
 
-    .modal-heading {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 2rem;
-      font-weight: normal;
-      margin-top: 0;
-    }
-
-    .close-row {
+    .modal-top {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 20px;
+    }
+
+    .modal-top h2 {
+      font: normal 32px Georgia, serif;
     }
 
     .close-button {
+      padding: 4px 10px;
       border: none;
       background: transparent;
-      font-size: 1.7rem;
-      padding: 4px 10px;
+      color: #654737;
+      font-size: 28px;
     }
 
     @media (max-width: 600px) {
@@ -184,82 +164,90 @@
       main {
         margin: 42px auto;
       }
-
-      #text-container {
-        min-height: 180px;
-      }
     }
   </style>
 </head>
 
 <body>
   <header>
-    <span>MEDIA & TECHNOLOGY</span>
+    <span>MEDIA &amp; TECHNOLOGY</span>
     <a href="https://nnataliaab.github.io/DIG3171/">Home ↗</a>
   </header>
 
   <main>
-    <p class="eyebrow">A Tracery generative project</p>
+    <p class="eyebrow">A Tracery Generative Project</p>
 
     <h1>AI's Impact on Creative Work</h1>
 
     <p class="intro">
       Artificial intelligence is changing how creative work is produced,
-      shared, and understood. Explore generated statements about AI in
+      shared, and understood. Explore generated statements about AI across
       different media fields and the questions these technologies raise
       about originality, authorship, and human creativity.
     </p>
 
-    <section class="generator" aria-label="AI statement generator">
-      <p class="generator-label">Generated perspective / <span id="counter">01</span></p>
+    <section class="generator">
+      <p class="generator-label">
+        Generated perspective / <span id="counter">01</span>
+      </p>
 
       <div id="text-container" aria-live="polite">
-        Your generated statement will appear here.
+        Click the button below to generate a statement.
       </div>
 
       <div class="buttons">
-        <button class="primary" id="regenerate">Generate another ↗</button>
-        <button class="secondary" id="about-button">About this project</button>
+        <button type="button" class="primary" id="regenerate">
+          Generate another ↗
+        </button>
+
+        <button type="button" class="secondary" id="about-button">
+          About this project
+        </button>
       </div>
     </section>
   </main>
 
   <footer>
-    Created for DIG 3171 · Digital media and generative text<br>
+    Created for DIG 3171 · Digital Media and Generative Text<br>
     Built with HTML, CSS, and Tracery-style grammar rules.
   </footer>
 
   <div class="modal" id="about-modal" role="dialog"
        aria-modal="true" aria-labelledby="about-title">
     <div class="modal-content">
-      <div class="close-row">
-        <h2 class="modal-heading" id="about-title">About the project</h2>
-        <button class="close-button" id="close-button"
-                aria-label="Close about window">×</button>
+      <div class="modal-top">
+        <h2 id="about-title">About the project</h2>
+        <button type="button" class="close-button" id="close-button"
+                aria-label="Close">×</button>
       </div>
 
       <p>
-        Artificial intelligence is increasingly being used in creative fields
-        such as filmmaking, graphic design, photography, music, and writing.
-        While these tools can make parts of the creative process faster and
-        more accessible, they also raise questions about originality,
-        authorship, creative ownership, and the future of creative jobs.
+        Artificial intelligence is increasingly being used in creative
+        fields such as filmmaking, graphic design, photography, music,
+        and writing. While these tools can make parts of the creative
+        process faster and more accessible, they also raise questions
+        about originality, authorship, creative ownership, and the
+        future of creative jobs.
       </p>
 
       <p>
-        This project uses Tracery-style grammar rules to generate statements
-        connecting different forms of AI with specific creative practices
-        and the concerns they create. By focusing on the relationship between
-        technology and human creativity, the project explores how AI is
-        changing the way creative work is produced and understood.
+        This project uses Tracery-style grammar rules to generate
+        statements connecting AI technologies with specific creative
+        practices and the concerns they raise. By focusing on the
+        relationship between technology and human creativity, the project
+        explores how AI is changing the way creative work is produced
+        and understood.
       </p>
 
       <p>
-        As generative AI becomes more common in media industries, understanding
-        its effects on human creators will become increasingly important.
+        As generative AI becomes more common in media industries,
+        understanding its effects on human creators will become
+        increasingly important.
       </p>
 
-      <button class="primary" id="done-button">Back to generator</button>
+      <button type="button" class="primary" id="done-button">
+        Back to generator
+      </button>
     </div>
   </div>
 
@@ -271,35 +259,28 @@
         "#music#",
         "#writing#",
         "#photography#",
-        "#creator# may use #technology# to #use# in #creative_work#,
-        raising questions about #issue#.",
-        "#technology# can #effect# #creative_work#,
-        which may lead to #consequence#."
+        "#creator# may use #technology# to #use# in #creative_work#, raising questions about #issue#.",
+        "#technology# can #effect# #creative_work#, which may lead to #consequence#."
       ],
 
       film: [
-        "Filmmakers may use #film_technology# to #film_use#,
-        raising concerns about #film_issue#."
+        "Filmmakers may use #film_technology# to #film_use#, raising concerns about #film_issue#."
       ],
 
       design: [
-        "Designers may use #design_technology# to #design_use#,
-        raising concerns about #design_issue#."
+        "Designers may use #design_technology# to #design_use#, raising concerns about #design_issue#."
       ],
 
       music: [
-        "Musicians may use #music_technology# to #music_use#,
-        raising concerns about #music_issue#."
+        "Musicians may use #music_technology# to #music_use#, raising concerns about #music_issue#."
       ],
 
       writing: [
-        "Writers may use #writing_technology# to #writing_use#,
-        raising concerns about #writing_issue#."
+        "Writers may use #writing_technology# to #writing_use#, raising concerns about #writing_issue#."
       ],
 
       photography: [
-        "Photographers may use #photo_technology# to #photo_use#,
-        raising concerns about #photo_issue#."
+        "Photographers may use #photo_technology# to #photo_use#, raising concerns about #photo_issue#."
       ],
 
       creator: [
@@ -363,13 +344,11 @@
         "AI video tools",
         "generative AI"
       ],
-
       film_use: [
         "generate visual effects",
         "create or edit video",
         "develop scenes and visual concepts"
       ],
-
       film_issue: [
         "human creativity",
         "creative jobs",
@@ -380,13 +359,11 @@
         "AI image generators",
         "generative AI"
       ],
-
       design_use: [
         "generate promotional artwork",
         "create images from text prompts",
         "develop visual concepts"
       ],
-
       design_issue: [
         "originality",
         "creative ownership",
@@ -397,13 +374,11 @@
         "AI music software",
         "generative AI"
       ],
-
       music_use: [
         "generate melodies",
         "create instrumental sounds",
         "develop musical ideas"
       ],
-
       music_issue: [
         "authorship",
         "originality",
@@ -414,13 +389,11 @@
         "AI writing tools",
         "generative AI"
       ],
-
       writing_use: [
         "generate scripts",
         "produce written content",
         "develop story ideas"
       ],
-
       writing_issue: [
         "authorship",
         "human creativity",
@@ -431,13 +404,11 @@
         "AI image generators",
         "generative AI"
       ],
-
       photo_use: [
         "generate or alter images",
         "remove or add elements to photographs",
         "create images without traditional photography"
       ],
-
       photo_issue: [
         "originality",
         "authenticity",
@@ -447,69 +418,89 @@
 
     function expandRule(rule, depth = 0) {
       if (depth > 20) {
-        return "Explore the relationship between AI and creativity.";
+        return "AI continues to raise questions about creativity.";
       }
 
-      return rule.replace(/#(\w+)#/g, (match, tag) => {
+      return rule.replace(/#(\w+)#/g, function(match, tag) {
         const options = grammar[tag];
 
         if (!options || options.length === 0) {
           return match;
         }
 
-        const choice = options[Math.floor(Math.random() * options.length)];
+        const choice = options[
+          Math.floor(Math.random() * options.length)
+        ];
+
         return expandRule(choice, depth + 1);
       });
     }
 
     let generatedCount = 0;
+    let previousStatement = "";
 
     function displayString() {
-      const options = grammar.origin;
-      const choice = options[Math.floor(Math.random() * options.length)];
+      let statement = "";
 
-      document.getElementById("text-container").textContent =
-        expandRule(choice);
+      for (let attempt = 0; attempt < 10; attempt++) {
+        const options = grammar.origin;
+        const choice = options[
+          Math.floor(Math.random() * options.length)
+        ];
 
-      generatedCount += 1;
+        statement = expandRule(choice);
+
+        if (statement !== previousStatement) {
+          break;
+        }
+      }
+
+      previousStatement = statement;
+      document.getElementById("text-container").textContent = statement;
+
+      generatedCount++;
       document.getElementById("counter").textContent =
         String(generatedCount).padStart(2, "0");
     }
 
     const modal = document.getElementById("about-modal");
 
+    function openModal() {
+      modal.style.display = "block";
+    }
+
     function closeModal() {
       modal.style.display = "none";
-      document.getElementById("about-button").focus();
     }
 
     document.getElementById("regenerate").addEventListener(
-      "click", displayString
+      "click",
+      displayString
     );
 
     document.getElementById("about-button").addEventListener(
-      "click", () => {
-        modal.style.display = "block";
-        document.getElementById("close-button").focus();
-      }
+      "click",
+      openModal
     );
 
     document.getElementById("close-button").addEventListener(
-      "click", closeModal
+      "click",
+      closeModal
     );
 
     document.getElementById("done-button").addEventListener(
-      "click", closeModal
+      "click",
+      closeModal
     );
 
-    window.addEventListener("click", (event) => {
+    modal.addEventListener("click", function(event) {
       if (event.target === modal) {
         closeModal();
       }
     });
 
-    window.addEventListener("keydown", (event) => {
-      if (event.key === "Escape" && modal.style.display === "block") {
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "Escape") {
         closeModal();
       }
     });
@@ -518,6 +509,7 @@
   </script>
 </body>
 </html>
+
 
     
 </script>
