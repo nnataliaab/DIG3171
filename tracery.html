@@ -1,392 +1,523 @@
+
 <!DOCTYPE html>
-<html>
-	<head>
-<p> This template was copied from <a href="https://iloveepoetry.org/creative/tracery2htmltemplate.html">Leonardo Flores's page</a> and modified for this class.</p>
+<html lang="en">
+<head>
   <meta charset="UTF-8">
-<title>AI's Impact on Creative Work</title></head>
-	<body>
-		<p><a href="https://nnataliaab.github.io/DIG3171/">Home</a></p>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI's Impact on Creative Work</title>
 
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-<!--
-Tracery to HTML Template
-Copyright 2023 Leonardo Flores
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
--->
-	
-
-<style>
     body {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        height: 100vh;
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: whitesmoke;
-    }
-    
-    #title-container {
-        width: 100%;
-        text-align: center;
-        max-height: 300px;
-		font-size: 4em;
-    }
-    
-    @media (max-width: 600px) {
-        #title-container {
-            max-height: 200px;
-        }
-        
-        #text-container {
-            width: 100%;
-        }
-    }
-    
-    #text-container {
-        text-align: center;
-        font-size: 1.5em;
-        color: #431bf7c6;
-        margin: auto; /* Center horizontally and vertically */
-        border: 0px solid black; /* Change 0px to your desired border thickness, if desired */
-        padding: 10px;
-        width: 600px;
+      margin: 0;
+      min-height: 100vh;
+      background: #f3eee6;
+      color: #332d29;
+      font-family: Georgia, "Times New Roman", serif;
+      display: flex;
+      flex-direction: column;
     }
 
-    /* CSS for buttons and modal */
-    #button-container {
-        position: fixed;
-        bottom: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        text-align: center;
-        width: 100%;
+    header {
+      padding: 22px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #d8cfc3;
+      font-family: Arial, sans-serif;
+      font-size: 0.85rem;
     }
-    
-    .button {
-        margin: 10px;
-        font-size: 2em;
+
+    header a {
+      color: #704b3b;
+      text-decoration: none;
     }
-	
+
+    header a:hover {
+      text-decoration: underline;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.75rem;
+      color: #865e4b;
+      font-family: Arial, sans-serif;
+    }
+
+    main {
+      width: min(850px, 90%);
+      margin: 65px auto;
+      flex: 1;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 7vw, 5.5rem);
+      line-height: 0.98;
+      letter-spacing: -0.045em;
+      font-weight: normal;
+      margin: 18px 0 24px;
+      max-width: 750px;
+    }
+
+    .intro {
+      font-family: Arial, sans-serif;
+      line-height: 1.8;
+      max-width: 620px;
+      color: #62574f;
+      font-size: 1rem;
+    }
+
+    .generator {
+      margin-top: 45px;
+      padding: clamp(24px, 5vw, 48px);
+      background: #e6d9ca;
+      border: 1px solid #d4c2b0;
+    }
+
+    .generator-label {
+      font-family: Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.72rem;
+      color: #785442;
+    }
+
+    #text-container {
+      font-size: clamp(1.4rem, 3.5vw, 2.25rem);
+      line-height: 1.45;
+      min-height: 150px;
+      margin: 28px 0;
+      overflow-wrap: anywhere;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    button {
+      border: 1px solid #654737;
+      padding: 13px 20px;
+      font-family: Arial, sans-serif;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .primary {
+      background: #654737;
+      color: #fffaf4;
+    }
+
+    .primary:hover {
+      background: #493126;
+    }
+
+    .secondary {
+      background: transparent;
+      color: #654737;
+    }
+
+    .secondary:hover {
+      background: #d8c6b4;
+    }
+
+    footer {
+      padding: 22px 7%;
+      border-top: 1px solid #d8cfc3;
+      font-family: Arial, sans-serif;
+      font-size: 0.78rem;
+      line-height: 1.7;
+      color: #75685e;
+    }
+
     .modal {
-        display: none; /* Hidden by default */
-        position: fixed; /* Stay in place */
-        z-index: 1; /* Sit on top */
-        left: 0;
-        top: 0;
-        width: 100%; /* Full width */
-        height: 100%; /* Full height */
-        overflow: auto; /* Enable scroll if needed */
-        background-color: rgb(0,0,0); /* Fallback color */
-        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 10;
+      background: rgba(35, 28, 24, 0.65);
+      padding: 20px;
+      overflow-y: auto;
     }
 
     .modal-content {
-        background-color: #fefefe;
-        margin: 15% auto; /* 15% from the top and centered */
-        padding: 20px;
-        border: 1px solid #888;
-        width: 80%; /* Could be more or less, depending on screen size */
-        font-size: 2.5em;
+      background: #f9f5ee;
+      width: min(650px, 100%);
+      margin: 7vh auto;
+      padding: clamp(24px, 5vw, 45px);
+      line-height: 1.8;
+      font-family: Arial, sans-serif;
     }
 
-    /* The Close Button */
-    .close {
-        color: #aaa;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
+    .modal-heading {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 2rem;
+      font-weight: normal;
+      margin-top: 0;
     }
-</style>
-    </head>
-    <body>
-<div id="title-container">AI's Impact on Creative Work</div>
-        <div id="text-container">This engine teach you the basics of Tracery grammar!</div>
 
-        <div id="button-container">
-            <button class="button" onclick="displayAbout()">About</button>
-            <button class="button" onclick="displayString()">Regenerate</button>
-        </div>
+    .close-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
 
-        <div id="myModal" class="modal">
-            <!-- Replace the statement below with your abstract. -->
-            <div class="modal-content">
-                <span class="close">×</span>
-                <p> Abstract
-Artificial intelligence is increasingly being used in creative fields such as filmmaking, graphic design, photography, music, and writing. While these tools can make parts of the creative process faster and more accessible, they also raise questions about originality, authorship, creative ownership, and the future of creative jobs. This project uses Tracery to generate statements connecting different forms of AI with specific creative practices and the concerns they create. By focusing on the relationship between technology and human creativity, the project demonstrates how AI is not simply replacing creative work but changing how that work is produced and understood. As generative AI becomes more common in media industries, understanding its effects on human creators will become increasingly important (U.S. Copyright Office, 2023).
-				</p> 
-            </div>
-        </div>
-    <script>
-var obj = {
-  "origin": [
-    "#creative_field#",
-    "#creator# may use #technology# to #use# in #creative_work#, raising concerns about #issue#.",
-    "#technology# can #effect# #creative_work# by #use#, which may lead to #consequence#."
-  ],
+    .close-button {
+      border: none;
+      background: transparent;
+      font-size: 1.7rem;
+      padding: 4px 10px;
+    }
 
-  "creative_field": [
-    "#film#",
-    "#design#",
-    "#music#",
-    "#writing#",
-    "#photography#"
-  ],
+    @media (max-width: 600px) {
+      header {
+        padding: 18px 5%;
+      }
 
-  "film": [
-    "#filmmaker# may use #film_technology# to #film_use# in filmmaking, raising concerns about #film_issue#."
-  ],
+      main {
+        margin: 42px auto;
+      }
 
-  "design": [
-    "#designer# may use #design_technology# to #design_use# in graphic design, raising concerns about #design_issue#."
-  ],
+      #text-container {
+        min-height: 180px;
+      }
+    }
+  </style>
+</head>
 
-  "music": [
-    "#musician# may use #music_technology# to #music_use# in music production, raising concerns about #music_issue#."
-  ],
+<body>
+  <header>
+    <span>MEDIA & TECHNOLOGY</span>
+    <a href="https://nnataliaab.github.io/DIG3171/">Home ↗</a>
+  </header>
 
-  "writing": [
-    "#writer# may use #writing_technology# to #writing_use# in writing, raising concerns about #writing_issue#."
-  ],
+  <main>
+    <p class="eyebrow">A Tracery generative project</p>
 
-  "photography": [
-    "#photographer# may use #photo_technology# to #photo_use# in photography, raising concerns about #photo_issue#."
-  ],
+    <h1>AI's Impact on Creative Work</h1>
 
-  "filmmaker": [
-    "Filmmakers"
-  ],
+    <p class="intro">
+      Artificial intelligence is changing how creative work is produced,
+      shared, and understood. Explore generated statements about AI in
+      different media fields and the questions these technologies raise
+      about originality, authorship, and human creativity.
+    </p>
 
-  "designer": [
-    "Designers"
-  ],
+    <section class="generator" aria-label="AI statement generator">
+      <p class="generator-label">Generated perspective / <span id="counter">01</span></p>
 
-  "musician": [
-    "Musicians"
-  ],
+      <div id="text-container" aria-live="polite">
+        Your generated statement will appear here.
+      </div>
 
-  "writer": [
-    "Writers"
-  ],
+      <div class="buttons">
+        <button class="primary" id="regenerate">Generate another ↗</button>
+        <button class="secondary" id="about-button">About this project</button>
+      </div>
+    </section>
+  </main>
 
-  "photographer": [
-    "Photographers"
-  ],
+  <footer>
+    Created for DIG 3171 · Digital media and generative text<br>
+    Built with HTML, CSS, and Tracery-style grammar rules.
+  </footer>
 
-  "film_technology": [
-    "AI video tools",
-    "generative AI"
-  ],
+  <div class="modal" id="about-modal" role="dialog"
+       aria-modal="true" aria-labelledby="about-title">
+    <div class="modal-content">
+      <div class="close-row">
+        <h2 class="modal-heading" id="about-title">About the project</h2>
+        <button class="close-button" id="close-button"
+                aria-label="Close about window">×</button>
+      </div>
 
-  "design_technology": [
-    "AI image generators",
-    "generative AI"
-  ],
+      <p>
+        Artificial intelligence is increasingly being used in creative fields
+        such as filmmaking, graphic design, photography, music, and writing.
+        While these tools can make parts of the creative process faster and
+        more accessible, they also raise questions about originality,
+        authorship, creative ownership, and the future of creative jobs.
+      </p>
 
-  "music_technology": [
-    "AI music software",
-    "generative AI"
-  ],
+      <p>
+        This project uses Tracery-style grammar rules to generate statements
+        connecting different forms of AI with specific creative practices
+        and the concerns they create. By focusing on the relationship between
+        technology and human creativity, the project explores how AI is
+        changing the way creative work is produced and understood.
+      </p>
 
-  "writing_technology": [
-    "AI writing tools",
-    "generative AI"
-  ],
+      <p>
+        As generative AI becomes more common in media industries, understanding
+        its effects on human creators will become increasingly important.
+      </p>
 
-  "photo_technology": [
-    "AI image generators",
-    "generative AI"
-  ],
+      <button class="primary" id="done-button">Back to generator</button>
+    </div>
+  </div>
 
-  "film_use": [
-    "generate visual effects",
-    "create or edit video",
-    "develop scenes and visual concepts"
-  ],
+  <script>
+    const grammar = {
+      origin: [
+        "#film#",
+        "#design#",
+        "#music#",
+        "#writing#",
+        "#photography#",
+        "#creator# may use #technology# to #use# in #creative_work#,
+        raising questions about #issue#.",
+        "#technology# can #effect# #creative_work#,
+        which may lead to #consequence#."
+      ],
 
-  "design_use": [
-    "generate promotional artwork",
-    "create images from text prompts",
-    "develop visual concepts"
-  ],
+      film: [
+        "Filmmakers may use #film_technology# to #film_use#,
+        raising concerns about #film_issue#."
+      ],
 
-  "music_use": [
-    "generate melodies",
-    "create instrumental sounds",
-    "develop musical ideas"
-  ],
+      design: [
+        "Designers may use #design_technology# to #design_use#,
+        raising concerns about #design_issue#."
+      ],
 
-  "writing_use": [
-    "generate scripts",
-    "produce written content",
-    "develop story ideas"
-  ],
+      music: [
+        "Musicians may use #music_technology# to #music_use#,
+        raising concerns about #music_issue#."
+      ],
 
-  "photo_use": [
-    "generate or alter images",
-    "remove or add elements to photographs",
-    "create images without traditional photography"
-  ],
+      writing: [
+        "Writers may use #writing_technology# to #writing_use#,
+        raising concerns about #writing_issue#."
+      ],
 
-  "film_issue": [
-    "human creativity",
-    "creative jobs",
-    "authorship"
-  ],
+      photography: [
+        "Photographers may use #photo_technology# to #photo_use#,
+        raising concerns about #photo_issue#."
+      ],
 
-  "design_issue": [
-    "originality",
-    "creative ownership",
-    "the role of human designers"
-  ],
+      creator: [
+        "A filmmaker",
+        "A designer",
+        "A musician",
+        "A writer",
+        "A photographer"
+      ],
 
-  "music_issue": [
-    "authorship",
-    "originality",
-    "the future of musicians"
-  ],
+      technology: [
+        "generative AI",
+        "AI writing tools",
+        "AI image generators",
+        "AI video tools",
+        "AI music software"
+      ],
 
-  "writing_issue": [
-    "authorship",
-    "human creativity",
-    "the role of writers"
-  ],
+      creative_work: [
+        "filmmaking",
+        "graphic design",
+        "photography",
+        "music production",
+        "digital storytelling"
+      ],
 
-  "photo_issue": [
-    "originality",
-    "authenticity",
-    "creative ownership"
-  ],
+      use: [
+        "generate promotional images",
+        "create scripts and written content",
+        "produce visual effects",
+        "generate music and melodies",
+        "create or edit video",
+        "produce images from text prompts",
+        "develop creative concepts"
+      ],
 
-  "technology": [
-    "generative AI",
-    "AI writing tools",
-    "AI image generators",
-    "AI video tools",
-    "AI music software"
-  ],
+      effect: [
+        "automate parts of",
+        "reshape",
+        "change how people approach",
+        "speed up parts of"
+      ],
 
-  "effect": [
-    "automate parts of",
-    "reshape",
-    "reduce the need for human work in",
-    "change how people create",
-    "speed up parts of"
-  ],
+      issue: [
+        "originality",
+        "authorship",
+        "creative ownership",
+        "job displacement",
+        "human creativity"
+      ],
 
-  "creative_work": [
-    "filmmaking",
-    "graphic design",
-    "photography",
-    "music production",
-    "digital storytelling"
-  ],
+      consequence: [
+        "less human involvement",
+        "uncertainty about creative ownership",
+        "changes to creative jobs",
+        "questions about originality",
+        "greater reliance on automation"
+      ],
 
-  "use": [
-    "generating promotional images",
-    "creating scripts or written content",
-    "producing visual effects",
-    "generating music or melodies",
-    "creating or editing video",
-    "producing images from text prompts",
-    "developing creative concepts"
-  ],
+      film_technology: [
+        "AI video tools",
+        "generative AI"
+      ],
 
-  "issue": [
-    "originality",
-    "authorship",
-    "creative ownership",
-    "job displacement",
-    "human creativity"
-  ],
+      film_use: [
+        "generate visual effects",
+        "create or edit video",
+        "develop scenes and visual concepts"
+      ],
 
-   "consequence": [
-    "less human involvement",
-    "uncertainty about creative ownership",
-    "changes to creative jobs",
-    "questions about originality",
-    "greater reliance on automation"
-  ]
-};
+      film_issue: [
+        "human creativity",
+        "creative jobs",
+        "authorship"
+      ],
 
-function generateString(rule) {
-  return expandRule(rule);
-}
+      design_technology: [
+        "AI image generators",
+        "generative AI"
+      ],
 
-function expandRule(rule) {
-  var result = rule;
-  var match = /#(\w+(?:\.\w+)*)#/.exec(result);
-  while (match) {
-    var tag = match[1];
-    var replacement = handleTag(tag);
-    result = result.replace(match[0], replacement);
-    match = /#(\w+(?:\.\w+)*)#/.exec(result);
-  }
-  return result;
-}
+      design_use: [
+        "generate promotional artwork",
+        "create images from text prompts",
+        "develop visual concepts"
+      ],
 
-function handleTag(tag) {
-  var parts = tag.split('.');
-  var key = parts[0];
-  var modifiers = parts.slice(1);
-  
-  if (!obj[key]) return "#" + tag + "#";
-  
-  var selected = obj[key][Math.floor(Math.random() * obj[key].length)];
-  var result = expandRule(selected);
-  
-  // Apply modifiers
-  if (modifiers.includes('capitalize') && result.length > 0) {
-    result = result.charAt(0).toUpperCase() + result.slice(1);
-  }
-  
-  return result;
-}
+      design_issue: [
+        "originality",
+        "creative ownership",
+        "the role of human designers"
+      ],
 
-function displayString() {
-    var randomIndex = Math.floor(Math.random() * obj.origin.length);
-    document.getElementById('text-container').innerHTML = generateString(obj.origin[randomIndex]);
-}
+      music_technology: [
+        "AI music software",
+        "generative AI"
+      ],
 
-    displayString();  // call once at the beginning
-    setInterval(displayString, 30000);  // call every 30 seconds
-            // Get the modal
-            var modal = document.getElementById("myModal");
+      music_use: [
+        "generate melodies",
+        "create instrumental sounds",
+        "develop musical ideas"
+      ],
 
-            // Get the <span> element that closes the modal
-            var span = document.getElementsByClassName("close")[0];
+      music_issue: [
+        "authorship",
+        "originality",
+        "the future of musicians"
+      ],
 
-            // When the user clicks on <span> (x), close the modal
-            span.onclick = function() {
-                modal.style.display = "none";
-            }
+      writing_technology: [
+        "AI writing tools",
+        "generative AI"
+      ],
 
-            // When the user clicks anywhere outside of the modal, close it
-            window.onclick = function(event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
-                }
-            }
+      writing_use: [
+        "generate scripts",
+        "produce written content",
+        "develop story ideas"
+      ],
 
-            // Function to display the about modal
-            function displayAbout() {
-                modal.style.display = "block";
-            }
-		    function goFullscreen() {
-        if (document.documentElement.requestFullscreen) {
-            document.documentElement.requestFullscreen();
-        } else if (document.documentElement.mozRequestFullScreen) { // Firefox
-            document.documentElement.mozRequestFullScreen();
-        } else if (document.documentElement.webkitRequestFullscreen) { // Chrome, Safari and Opera
-            document.documentElement.webkitRequestFullscreen();
-        } else if (document.documentElement.msRequestFullscreen) { // IE/Edge
-            document.documentElement.msRequestFullscreen();
+      writing_issue: [
+        "authorship",
+        "human creativity",
+        "the role of writers"
+      ],
+
+      photo_technology: [
+        "AI image generators",
+        "generative AI"
+      ],
+
+      photo_use: [
+        "generate or alter images",
+        "remove or add elements to photographs",
+        "create images without traditional photography"
+      ],
+
+      photo_issue: [
+        "originality",
+        "authenticity",
+        "creative ownership"
+      ]
+    };
+
+    function expandRule(rule, depth = 0) {
+      if (depth > 20) {
+        return "Explore the relationship between AI and creativity.";
+      }
+
+      return rule.replace(/#(\w+)#/g, (match, tag) => {
+        const options = grammar[tag];
+
+        if (!options || options.length === 0) {
+          return match;
         }
+
+        const choice = options[Math.floor(Math.random() * options.length)];
+        return expandRule(choice, depth + 1);
+      });
     }
+
+    let generatedCount = 0;
+
+    function displayString() {
+      const options = grammar.origin;
+      const choice = options[Math.floor(Math.random() * options.length)];
+
+      document.getElementById("text-container").textContent =
+        expandRule(choice);
+
+      generatedCount += 1;
+      document.getElementById("counter").textContent =
+        String(generatedCount).padStart(2, "0");
+    }
+
+    const modal = document.getElementById("about-modal");
+
+    function closeModal() {
+      modal.style.display = "none";
+      document.getElementById("about-button").focus();
+    }
+
+    document.getElementById("regenerate").addEventListener(
+      "click", displayString
+    );
+
+    document.getElementById("about-button").addEventListener(
+      "click", () => {
+        modal.style.display = "block";
+        document.getElementById("close-button").focus();
+      }
+    );
+
+    document.getElementById("close-button").addEventListener(
+      "click", closeModal
+    );
+
+    document.getElementById("done-button").addEventListener(
+      "click", closeModal
+    );
+
+    window.addEventListener("click", (event) => {
+      if (event.target === modal) {
+        closeModal();
+      }
+    });
+
+    window.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && modal.style.display === "block") {
+        closeModal();
+      }
+    });
+
+    displayString();
+  </script>
+</body>
+</html>
 
     
 </script>
